@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('props.label_index') %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('props.label_name') %></th>
+      <th><%= t('props.label_rent') %></th>
+      <th><%= t('props.label_address') %></th>
+      <th><%= t('props.label_age') %></th>
+      <th><%= t('props.label_remarks') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @props.each do |prop| %>
+      <tr>
+        <td><%= prop.name %></td>
+        <td><%= prop.rent %></td>
+        <td><%= prop.address %></td>
+        <td><%= prop.age %></td>
+        <td><%= prop.remarks %></td>
+        <td><%= link_to t('props.label_link_show'), prop %></td>
+        <td><%= link_to t('props.label_link_edit'), edit_prop_path(prop) %></td>
+        <td><%= link_to t('props.label_link_destroy'), prop, method: :delete, data: { confirm: t('props.msg_confirm_destroy') } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('props.label_link_new'), new_prop_path %>
