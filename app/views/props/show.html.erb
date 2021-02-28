@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p class='para_prop'>
+  <strong><%= t('props.label_name')%>:</strong>
+  <%= @prop.name %>
+</p>
+
+<p class='para_prop'>
+  <strong><%= t('props.label_rent')%>:</strong>
+  <%= @prop.rent %><%= t('props.label_yen') %>
+</p>
+
+<p class='para_prop'>
+  <strong><%= t('props.label_address')%>:</strong>
+  <%= @prop.address %>
+</p>
+
+<p class='para_prop'>
+  <strong><%= t('props.label_age')%>:</strong>
+  <%= @prop.age %><%= t('props.label_year') %>
+</p>
+
+<p class='para_prop'>
+  <strong><%= t('props.label_remarks')%>:</strong>
+  <%= @prop.remarks %>
+</p>
+<hr>
+<% @prop.nears.each do |near| %>
+<h3><%= t('props.label_near_station') %><%= (@count==nil) ? @count=1 : @count+=1 %></h3>
+<p class='para_prop'><strong><%= t('props.label_line_name') %></strong> <%= near.line_name %></p>
+<p class='para_prop'><strong><%=t('props.label_station_name')%></strong> <%= near.station_name %></p>
+<p class='para_prop'><strong><%=t('props.label_minutes_foot')%></strong> <%= near.minutes_foot %><%= t('props.label_minutes') %></p>
+<% end %>
+  
+<%= link_to t('props.label_link_edit'), edit_prop_path(@prop) %> |
+<%= link_to t('props.label_link_back'), props_path %>

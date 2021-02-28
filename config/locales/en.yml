@@ -18,6 +18,31 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  props:
+    label_index: 'Prop Index'
+    label_new: 'New Prop'
+    label_edit: 'Editing Prop'          
+    label_name: 'Name'
+    label_rent: 'Rent'
+    label_address: 'Address'
+    label_age: 'Age'
+    label_remarks: 'Remarks'    
+    label_yen: 'yen'
+    label_year: 'year'
+    label_minutes: 'minutes'        
+    label_near_station: 'Nearest Station'
+    label_line_name: 'Line'
+    label_station_name: 'Station'
+    label_minutes_foot: 'Minutes on foot'
+    label_link_new: 'New Prop'    
+    label_link_edit: 'Edit'
+    label_link_back: 'Back'
+    label_link_show: 'Show'
+    label_link_destroy: 'Destroy'
+    label_submit_new: 'Create'
+    label_submit_edit: 'Updaet'        
+    msg_confirm_destroy: 'Are you sure'
+    msg_notice_create_success: 'Prop was successfully created.'
+    msg_notice_update_success: 'Prop was successfully updated.'
+    msg_notice_destroy_success: 'Prop was successfully destroyed.'

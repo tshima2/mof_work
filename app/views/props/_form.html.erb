@@ -1,0 +1,54 @@
+<%= form_with(model: @prop, local: true) do |form| %>
+  <% if @prop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prop.errors.count, "error") %> prohibited this @prop from being saved:</h2>
+
+      <ul>
+      <% @prop.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, t('props.label_name')%>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rent, t('props.label_rent') %>
+    <%= form.number_field :rent %><%= t('props.label_yen') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address, t('props.label_address') %>
+    <%= form.text_area :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age, t('props.label_age') %>
+    <%= form.number_field :age %><%= t('props.label_year') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :remarks, t('props.label_remarks') %>
+    <%= form.text_area :remarks %>
+  </div>
+
+  <hr>
+    <%= form.fields_for :nears do |near| %>
+      <h3><%= t('props.label_near_station') %><%= (@count==nil) ? @count=1 : @count+=1 %></h3>
+      <p class='para_prop'><strong><%= t('props.label_line_name') %></strong> <%= near.text_field :line_name %></p>
+      <p class='para_prop'><strong><%= t('props.label_station_name')%></strong> <%= near.text_field :station_name %></p>
+      <p class='para_prop'><strong><%= t('props.label_minutes_foot')%></strong> <%= near.number_field :minutes_foot %><%= t('props.label_minutes') %></p>
+    <% end %>
+
+    <div class="actions">
+    <% if controller.action_name=='new' %>
+      <%= form.submit t('props.label_submit_new') %>
+    <% elsif controller.action_name=='edit' %>
+      <%= form.submit t('props.label_submit_edit') %>
+    <% end %>
+  </div>
+<% end %>
