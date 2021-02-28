@@ -43,7 +43,8 @@
       <p class='para_prop'><strong><%= t('props.label_station_name')%></strong> <%= near.text_field :station_name %></p>
       <p class='para_prop'><strong><%= t('props.label_minutes_foot')%></strong> <%= near.number_field :minutes_foot %><%= t('props.label_minutes') %></p>
     <% end %>
-  <div class="actions">
+
+    <div class="actions">
     <% if controller.action_name=='new' %>
       <%= form.submit t('props.label_submit_new') %>
     <% elsif controller.action_name=='edit' %>

@@ -20,6 +20,8 @@ class PropsController < ApplicationController
 
   # GET /props/1/edit
   def edit
+    dummy_id=999_999_999_999
+    @prop.nears << Near.new(prop_id: @prop.id)
   end
 
   # POST /props
